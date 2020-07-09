@@ -2,7 +2,7 @@
 version: '3.7' 
 services: 
   ssh: 
-    image: zulissi/dev_ssh # replace this with your repo
+    image: ntiwari/dev_ssh # replace this with your repo
     deploy: 
       placement: 
         constraints: 
@@ -14,7 +14,7 @@ services:
           cpus: '4'
           memory: 500M
     volumes:
-      - zulissi-home:/home/zulissi # replace zulissi with your volume
+      - ntiwari-home:/home/ntiwari # replace zulissi with your volume
     ports:
       - target: 22
         published: 2222 # pick your ssh port
@@ -22,7 +22,7 @@ services:
         mode: host
 
   jupyter: 
-    image: zulissi/dev_gpu_jupyter # replace this with your repo
+    image: ntiwari/dev_gpu_jupyter # replace this with your repo
     deploy: 
       placement: 
         constraints: 
@@ -37,7 +37,7 @@ services:
           cpus: '16'
           memory: 8G
     volumes:
-      - zulissi-home:/home/zulissi # replace zulissi with your volume
+      - ntiwari-home:/home/ntiwari # replace zulissi with your volume
     environment:
         OMP_NUM_THREADS: 1 # make sure we only use 1 thread/process
         NUMEXPR_NUM_THREADS: 1 # make sure we only use 1 thread/process
@@ -50,7 +50,7 @@ services:
       - traefik-public
 
 volumes:
-  zulissi-home:
+  ntiwari-home:
   
 networks:
   traefik-public:
