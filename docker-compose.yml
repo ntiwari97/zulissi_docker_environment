@@ -2,7 +2,7 @@
 version: '3.7' 
 services: 
   ssh: 
-    image: ntiwari/dev_ssh # replace this with your repo
+    image: ntiwari97/dev_ssh # replace this with your repo
     deploy: 
       placement: 
         constraints: 
@@ -22,7 +22,7 @@ services:
         mode: host
 
   jupyter: 
-    image: ntiwari/dev_gpu_jupyter # replace this with your repo
+    image: ntiwari97/dev_gpu_jupyter # replace this with your repo
     deploy: 
       placement: 
         constraints: 
